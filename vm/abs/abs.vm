@@ -1,1 +1,15 @@
 function abs 0
+    push argument 0
+    push constant 0 
+    gt
+    if-goto END
+
+    push argument 0
+    neg
+    goto END1
+
+    label END
+    push argument 0 
+
+    label END1
+    return 

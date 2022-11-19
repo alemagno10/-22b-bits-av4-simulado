@@ -39,6 +39,13 @@ def test_fact_one():
     tst = {TEMP[0]:1}
     assert vm_test(os.path.join("vm", "fact"), ram, tst)
 
+def test_fact_two():
+    ram = init_ram()
+    x = 2
+    ram[TEMP[0]] = x
+    tst = {TEMP[0]:math.factorial(x)}
+    assert vm_test(os.path.join("vm", "fact"), ram, tst)
+
 def test_fact_three():
     ram = init_ram()
     x = 3
@@ -48,7 +55,7 @@ def test_fact_three():
 
 def test_fact_generic():
     ram = init_ram()
-    x = 6
+    x = 8
     ram[TEMP[0]] = x
     tst = {TEMP[0]:math.factorial(x)}
     assert vm_test(os.path.join("vm", "fact"), ram, tst)
